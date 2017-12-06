@@ -6,7 +6,8 @@ using System.Web;
 namespace Garage_WebApp.Models
 {
     public class ParkedVehicle
-    {
+    {   
+        public int Id { get; set; }
         public string Type { get; set; }
         public int RegistrationNumber { get; set; }
         public string Color { get; set; }
