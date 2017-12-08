@@ -1,33 +1,24 @@
-﻿@model IEnumerable<Garage_WebApp.Models.ParkedVehicle>
+﻿@model IEnumerable<Garage_WebApp.Models.ViewModel.VehicleList>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "VehicleList";
 }
 
-<h2>Garage Register Application</h2>
+<h2>VehicleList</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RegNr)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfWheels)
+            @Html.DisplayNameFor(model => model.RegNr)
         </th>
         <th></th>
     </tr>
@@ -38,19 +29,10 @@
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RegNr)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Color)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfWheels)
+            @Html.DisplayFor(modelItem => item.RegNr)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

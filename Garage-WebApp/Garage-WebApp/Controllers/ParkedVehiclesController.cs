@@ -8,17 +8,27 @@ using System.Web;
 using System.Web.Mvc;
 using Garage_WebApp.DataAccessLayer;
 using Garage_WebApp.Models;
+using Garage_WebApp.Models.ViewModel;
 
 namespace Garage_WebApp.Controllers
 {
     public class ParkedVehiclesController : Controller
     {
-        private RegisterContext db = new RegisterContext();
+        public RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
         public ActionResult Index()
         {
             return View(db.Vehicle.ToList());
+        }
+        public ActionResult VehicleList()
+        {
+            List<VehicleList> model = new List<VehicleList>();
+            foreach(var n in db.Vehicle)
+            {
+                model.Add(new VehicleList(n));
+            }
+            return View(model);
         }
 
         // GET: ParkedVehicles/Details/5
@@ -47,11 +57,12 @@ namespace Garage_WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegistrationNumber,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {
                 db.Vehicle.Add(parkedVehicle);
+                parkedVehicle.ParkingTime = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

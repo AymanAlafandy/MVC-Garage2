@@ -10,7 +10,7 @@ namespace Garage_WebApp.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Garage_WebApp.DataAccessLayer.RegisterContext context)
@@ -20,53 +20,58 @@ namespace Garage_WebApp.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            context.Vehicle.AddOrUpdate(n => n.Type,
+            context.Vehicle.AddOrUpdate(n => n.RegNr,
             new ParkedVehicle()
             {
-                Type = "Car",
-                RegistrationNumber = 123,
+                Type =Models.Type.Car ,
+                RegNr = "123",
                 Color = "Red",
                 Brand = "TOYOTA",
                 Model = "Avi",
                 NumberOfWheels = 4,
+                ParkingTime = DateTime.Now,
             },
              new ParkedVehicle()
              {
-                 Type = "Boat",
-                 RegistrationNumber = 445,
+                 Type = Models.Type.Boat,
+                 RegNr = "445",
                  Color = "Pink",
                  Brand = "Vila",
                  Model = "Energy",
                  NumberOfWheels = 0,
+                 ParkingTime = DateTime.Now,
              },
 
               new ParkedVehicle()
               {
-                  Type = "Airplan",
-                  RegistrationNumber = 0010,
+                  Type = Models.Type.Airplan,
+                  RegNr = "0010",
                   Color = "Blue",
                   Brand = "ThaiAirWay",
                   Model = "Boing77",
                   NumberOfWheels = 3,
+                  ParkingTime = DateTime.Now,
               },
               new ParkedVehicle()
               {
-                  Type = "Motorcycle",
-                  RegistrationNumber = 2525,
+                  Type = Models.Type.Motorcycle,
+                  RegNr = "2525",
                   Color = "Black",
                   Brand = "YAMAHA",
                   Model = "LordCoper",
                   NumberOfWheels = 3,
+                  ParkingTime = DateTime.Now,
               },
               new ParkedVehicle()
               {
-                  Type = "Bus",
-                  RegistrationNumber = 0005,
+                  Type = Models.Type.Bus,
+                  RegNr = "0005",
                   Color = "Green",
                   Brand = "VOLVO",
                   Model = "BUSSPower",
                   NumberOfWheels = 6,
-            
+                  ParkingTime = DateTime.Now,
+
               });
         }
     }

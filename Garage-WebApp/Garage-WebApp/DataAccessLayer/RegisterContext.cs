@@ -13,5 +13,6 @@ namespace Garage_WebApp.DataAccessLayer
 
         public DbSet<Models.ParkedVehicle> Vehicle { get; set; }
 
+        
     }
 }
