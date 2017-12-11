@@ -7,7 +7,7 @@
 <h2>Garage Register Application</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Park a car", "Create")
 </p>
 <table class="table">
     <tr>
@@ -55,7 +55,8 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Unpark", "Delete", new { id=item.Id })|
+            @Html.ActionLink("Receipts", "Receipts", new { id = item.Id })
         </td>
     </tr>
 }

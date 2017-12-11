@@ -16,7 +16,7 @@ namespace Garage_WebApp.Models.ViewModel
         public Type Type { get; set; }
         [DisplayName("Color")]
         public string Color { get; set; }
-        [DisplayName("RegNr")]
+        [DisplayName("Registration Number")]
         public string RegNr { get; set; }
         [DisplayName("ParingTime")]
         public DateTime ParkingTime { get; set; }
@@ -33,6 +33,7 @@ namespace Garage_WebApp.Models.ViewModel
             Color = v.Color;
             RegNr = v.RegNr;
             ParkingTime = v.ParkingTime;
+
         }
     }
 }

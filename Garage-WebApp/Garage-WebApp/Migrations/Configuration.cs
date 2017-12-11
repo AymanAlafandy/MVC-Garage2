@@ -30,6 +30,8 @@ namespace Garage_WebApp.Migrations
                 Model = "Avi",
                 NumberOfWheels = 4,
                 ParkingTime = DateTime.Now,
+                //ChekInTime = DateTime.Now,
+                CheckOutTime = DateTime.Now,
             },
              new ParkedVehicle()
              {
@@ -40,6 +42,9 @@ namespace Garage_WebApp.Migrations
                  Model = "Energy",
                  NumberOfWheels = 0,
                  ParkingTime = DateTime.Now,
+                 //ChekInTime = DateTime.Now,
+                 CheckOutTime = DateTime.Now,
+
              },
 
               new ParkedVehicle()
@@ -51,6 +56,8 @@ namespace Garage_WebApp.Migrations
                   Model = "Boing77",
                   NumberOfWheels = 3,
                   ParkingTime = DateTime.Now,
+                  //ChekInTime = DateTime.Now,
+                  CheckOutTime = DateTime.Now,
               },
               new ParkedVehicle()
               {
@@ -61,6 +68,8 @@ namespace Garage_WebApp.Migrations
                   Model = "LordCoper",
                   NumberOfWheels = 3,
                   ParkingTime = DateTime.Now,
+                  //ChekInTime = DateTime.Now,
+                  CheckOutTime = DateTime.Now,
               },
               new ParkedVehicle()
               {
@@ -71,6 +80,8 @@ namespace Garage_WebApp.Migrations
                   Model = "BUSSPower",
                   NumberOfWheels = 6,
                   ParkingTime = DateTime.Now,
+                  //ChekInTime = DateTime.Now,
+                  CheckOutTime = DateTime.Now,
 
               });
         }

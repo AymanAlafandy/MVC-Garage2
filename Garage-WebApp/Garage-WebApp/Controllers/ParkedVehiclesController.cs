@@ -57,7 +57,7 @@ namespace Garage_WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels,ParkingTime")] ParkedVehicle parkedVehicle)
         {
             if (ModelState.IsValid)
             {

@@ -8,12 +8,13 @@ namespace Garage_WebApp.Models.ViewModel
     public class Receipt
     {
         public int Id { get; set; }
-        public Type Type { get; set; }
+        public string Type { get; set; }
         public string RegNr { get; set; }
-        public float CheckInTime { get; set; }
-        public float CheckOutTime { get; set; }
-        public float TotalTime { get; set; }
-        
+        public DateTime CheckIn { get; set; }
+        public DateTime CheckOut { get; set; }
+        public TimeSpan TotalTime { get; set; }
+        public int Price { get; set; }
+
         public Receipt()
         {
 
@@ -21,13 +22,14 @@ namespace Garage_WebApp.Models.ViewModel
         public Receipt(ParkedVehicle r)
         {
             Id = r.Id;
-            Type = r.Type;
+            Type = r.Type.ToString();
             RegNr = r.RegNr;
+            CheckIn = r.ParkingTime;
+            CheckOut = DateTime.Now;
+            TotalTime = DateTime.Now - r.ParkingTime;
+            Price = 50;
 
-            //CheckInTime = r.CheckInTime;
-            //CheckOutTime = r.CheckOutTime;
 
-            // assign checkouttime instead of send it to database
 
 
         }
