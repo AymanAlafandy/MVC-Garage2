@@ -18,8 +18,24 @@ namespace Garage_WebApp.Controllers
         // GET: ParkedVehicles
         public ActionResult Index()
         {
-            return View(db.Vehicle.ToList());
+            return View(db.Vehicle.ToList());            
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(/**/string searchBy, string search)
+        {
+            if (searchBy== "RegistrationNumber") //search
+            {
+                return View(db.Vehicle.Where(x => x.RegistrationNumber.ToString().Contains(search)).ToList());
+            }
+            else
+            {
+                return View(db.Vehicle.ToList());
+            }
+        }
+
 
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
@@ -49,7 +65,7 @@ namespace Garage_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Type,RegistrationNumber,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
                 db.Vehicle.Add(parkedVehicle);
                 db.SaveChanges();
@@ -104,6 +120,7 @@ namespace Garage_WebApp.Controllers
             }
             return View(parkedVehicle);
         }
+        
 
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]

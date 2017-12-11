@@ -66,7 +66,16 @@ namespace Garage_WebApp.Migrations
                   Brand = "VOLVO",
                   Model = "BUSSPower",
                   NumberOfWheels = 6,
-            
+
+              },
+              new ParkedVehicle()
+              {
+                  Type = "Car",
+                  RegistrationNumber = 69,
+                  Color = "bronze",
+                  Brand = "VOLVO",
+                  Model = "Family Car",
+                  NumberOfWheels = 4,
               });
         }
     }
