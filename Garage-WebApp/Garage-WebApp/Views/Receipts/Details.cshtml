@@ -1,4 +1,4 @@
-﻿@model Garage_WebApp.Models.ParkedVehicle
+﻿@model Garage_WebApp.Models.ViewModel.Receipt
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ParkedVehicle</h4>
+    <h4>Receipt</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,35 +27,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Color)
+            @Html.DisplayNameFor(model => model.CheckIn)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Color)
+            @Html.DisplayFor(model => model.CheckIn)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Brand)
+            @Html.DisplayNameFor(model => model.CheckOut)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Brand)
+            @Html.DisplayFor(model => model.CheckOut)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Model)
+            @Html.DisplayNameFor(model => model.TotalTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Model)
+            @Html.DisplayFor(model => model.TotalTime)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NumberOfWheels)
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NumberOfWheels)
+            @Html.DisplayFor(model => model.Price)
         </dd>
 
     </dl>
