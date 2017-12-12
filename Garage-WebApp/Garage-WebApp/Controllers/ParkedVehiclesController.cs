@@ -24,7 +24,7 @@ namespace Garage_WebApp.Controllers
         public ActionResult VehicleList()
         {
             List<VehicleList> model = new List<Models.ViewModel.VehicleList>();
-            foreach(var p in db.Vehicle)
+            foreach(var p in db.Vehicle.ToList())
             {
                 model.Add(new VehicleList(p));
             }

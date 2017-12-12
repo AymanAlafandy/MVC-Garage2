@@ -7,13 +7,13 @@ namespace Garage_WebApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class init4 : IMigrationMetadata
+    public sealed partial class temp1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(temp1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712120749214_init4"; }
+            get { return "201712121429154_temp1"; }
         }
         
         string IMigrationMetadata.Source

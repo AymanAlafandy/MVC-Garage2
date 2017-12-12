@@ -164,9 +164,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712120749214_init4.cs" />
-    <Compile Include="Migrations\201712120749214_init4.Designer.cs">
-      <DependentUpon>201712120749214_init4.cs</DependentUpon>
+    <Compile Include="Migrations\201712121429154_temp1.cs" />
+    <Compile Include="Migrations\201712121429154_temp1.Designer.cs">
+      <DependentUpon>201712121429154_temp1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
@@ -234,8 +234,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712120749214_init4.resx">
-      <DependentUpon>201712120749214_init4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712121429154_temp1.resx">
+      <DependentUpon>201712121429154_temp1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
