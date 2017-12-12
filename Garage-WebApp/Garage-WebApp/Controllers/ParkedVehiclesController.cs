@@ -8,17 +8,28 @@ using System.Web;
 using System.Web.Mvc;
 using Garage_WebApp.DataAccessLayer;
 using Garage_WebApp.Models;
+using Garage_WebApp.Models.ViewModel;
 
 namespace Garage_WebApp.Controllers
 {
     public class ParkedVehiclesController : Controller
     {
-        private RegisterContext db = new RegisterContext();
+        public RegisterContext db = new RegisterContext();
 
         // GET: ParkedVehicles
         public ActionResult Index()
         {
-            return View(db.Vehicle.ToList());            
+            return View(db.Vehicle.ToList());
+        }
+        public ActionResult VehicleList()
+        {
+            List<VehicleList> model = new List<Models.ViewModel.VehicleList>();
+            foreach(var p in db.Vehicle)
+            {
+                model.Add(new VehicleList(p));
+            }
+            //var model = db.Vehicle.Where(p => p.Color == "VehicleList").ToList();
+            return View(model);
         }
 
 
@@ -28,7 +39,7 @@ namespace Garage_WebApp.Controllers
         {
             if (searchBy== "RegistrationNumber") //search
             {
-                return View(db.Vehicle.Where(x => x.RegistrationNumber.ToString().Contains(search)).ToList());
+                return View(db.Vehicle.Where(x => x.RegNr.ToString().Contains(search)).ToList());
             }
             else
             {
@@ -63,11 +74,12 @@ namespace Garage_WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegistrationNumber,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels,ParkingTime")] ParkedVehicle parkedVehicle)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 db.Vehicle.Add(parkedVehicle);
+                parkedVehicle.ParkingTime = DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -120,7 +132,7 @@ namespace Garage_WebApp.Controllers
             }
             return View(parkedVehicle);
         }
-        
+
 
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]

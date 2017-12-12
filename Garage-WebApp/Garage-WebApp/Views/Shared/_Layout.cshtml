@@ -16,15 +16,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SMARTGARAGE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Registration", "Index", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("ParkVehicle", "Index", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("VehicleList", "VehicleList", "ParkedVehicles")</li>
+                    <li>@*@Html.ActionLink("Garages", "Garages", "Home")*@
+                        @*<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Garages
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("ParkedVehicle", "Garages", "ParkedVehicle")</li>
+                            <li>@Html.ActionLink("VehicleList", "View", "ParkVehicle")</li>
+                        </ul>
+                    </li>*@
                 </ul>
+                   
             </div>
         </div>
     </div>
@@ -32,7 +44,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - SMARTGARAGE</p>
         </footer>
     </div>
 

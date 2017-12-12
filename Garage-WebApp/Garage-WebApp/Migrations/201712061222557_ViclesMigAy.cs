@@ -12,12 +12,14 @@ namespace Garage_WebApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Type = c.String(),
-                        RegistrationNumber = c.Int(nullable: false),
-                        Color = c.String(),
-                        Brand = c.String(),
-                        Model = c.String(),
+                        Type = c.Int(nullable: false),
+                        RegNr = c.String(nullable: false),
+                        Color = c.String(nullable: false),
+                        Brand = c.String(nullable: false),
+                        Model = c.String(nullable: false),
                         NumberOfWheels = c.Int(nullable: false),
+                        ParkingTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        CheckOutTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -25,7 +27,6 @@ namespace Garage_WebApp.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.ParkedVehicles");
         }
     }
 }
