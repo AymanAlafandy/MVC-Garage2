@@ -27,7 +27,6 @@ namespace Garage_WebApp.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.ParkedVehicles");
         }
     }
 }

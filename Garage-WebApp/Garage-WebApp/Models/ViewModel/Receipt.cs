@@ -14,7 +14,7 @@ namespace Garage_WebApp.Models.ViewModel
         public DateTime CheckOut { get; set; }
         public TimeSpan TotalTime { get; set; }
         public int Price { get; set; }
-
+        
         public Receipt()
         {
 

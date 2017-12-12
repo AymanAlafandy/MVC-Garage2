@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.ComponentModel;
@@ -37,7 +39,6 @@ namespace Garage_WebApp.Models
         [Column(TypeName = "datetime2")]
         public DateTime CheckOutTime { get; set; }
     }
-
     public enum Type
     {
         Car,

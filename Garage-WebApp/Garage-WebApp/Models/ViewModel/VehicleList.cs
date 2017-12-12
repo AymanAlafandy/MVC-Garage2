@@ -9,16 +9,16 @@ namespace Garage_WebApp.Models.ViewModel
 {   
    
     public class VehicleList
-    {   
-        [ScaffoldColumn(false)]
+    {
+        private bool x;
         public int Id { get; set; }
-        [DisplayName("Type")]
+       
         public Type Type { get; set; }
-        [DisplayName("Color")]
+        
         public string Color { get; set; }
         [DisplayName("Registration Number")]
         public string RegNr { get; set; }
-        [DisplayName("ParingTime")]
+       
         public DateTime ParkingTime { get; set; }
        
 
@@ -35,5 +35,10 @@ namespace Garage_WebApp.Models.ViewModel
             ParkingTime = v.ParkingTime;
 
         }
+
+        //public VehicleList(bool x)
+        //{
+        //    this.x = x;
+        //}
     }
 }

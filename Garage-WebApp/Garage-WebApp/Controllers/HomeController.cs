@@ -26,5 +26,11 @@ namespace Garage_WebApp.Controllers
 
             return View();
         }
+        public ActionResult ParkedVehicle()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
