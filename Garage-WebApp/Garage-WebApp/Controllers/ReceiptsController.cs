@@ -35,14 +35,12 @@ namespace Garage_WebApp.Controllers
             return View(receipt);
         }
 
-       
-
-       
         
 
-       
 
-        
+
+
+
 
         protected override void Dispose(bool disposing)
         {

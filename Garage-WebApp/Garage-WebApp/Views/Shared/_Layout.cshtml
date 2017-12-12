@@ -23,17 +23,18 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("ParkedVehicle", "Index", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("ParkVehicle", "Index", "ParkedVehicles")</li>
+                    <li>@Html.ActionLink("VehicleList", "VehicleList", "ParkedVehicles")</li>
                     <li>@*@Html.ActionLink("Garages", "Garages", "Home")*@
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        @*<a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Garages
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Parked", "Add", "ParkedVehicle")</li>
-                            <li>@Html.ActionLink("VehicleList", "View", "ParkedVehicle")</li>
+                            <li>@Html.ActionLink("ParkedVehicle", "Garages", "ParkedVehicle")</li>
+                            <li>@Html.ActionLink("VehicleList", "View", "ParkVehicle")</li>
                         </ul>
-                    </li>
+                    </li>*@
                     </ul>
                    
             </div>
