@@ -12,5 +12,7 @@ namespace Garage_WebApp.DataAccessLayer
         {}
 
         public DbSet<Models.ParkedVehicle> Vehicle { get; set; }
+
+        public System.Data.Entity.DbSet<Garage_WebApp.Models.ViewModel.Receipt> Receipts { get; set; }
     }
 }

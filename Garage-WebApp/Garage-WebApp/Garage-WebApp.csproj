@@ -221,6 +221,7 @@
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\VehicleList.cshtml" />
     <Content Include="Views\Receipts\Details.cshtml" />
+    <Content Include="Views\Receipts\Receipts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

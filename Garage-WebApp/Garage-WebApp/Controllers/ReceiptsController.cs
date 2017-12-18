@@ -35,7 +35,22 @@ namespace Garage_WebApp.Controllers
             return View(receipt);
         }
 
-        
+
+        public ActionResult Receipts(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ParkedVehicle Vehicle = db.Vehicle.Find(id);
+            Receipt receipt = new Receipt(Vehicle);
+            if (receipt == null)
+            {
+                return HttpNotFound();
+            }
+            return View(receipt);
+        }
 
 
 

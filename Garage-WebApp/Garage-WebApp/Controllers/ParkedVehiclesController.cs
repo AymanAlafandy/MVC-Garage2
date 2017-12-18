@@ -136,5 +136,10 @@ namespace Garage_WebApp.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // GET: ParkedVehicles/Details/5
+      
+        // GET: ParkedVehicles/Create
+
     }
 }
