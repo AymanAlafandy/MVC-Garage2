@@ -10,7 +10,7 @@ namespace Garage_WebApp.Models.ViewModel
         public int Id { get; set; }
         public string Type { get; set; }
         public string RegNr { get; set; }
-        public DateTime CheckIn { get; set; }
+        //public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
         public TimeSpan TotalTime { get; set; }
         public int Price { get; set; }
@@ -24,7 +24,7 @@ namespace Garage_WebApp.Models.ViewModel
             Id = r.Id;
             Type = r.Type.ToString();
             RegNr = r.RegNr;
-            CheckIn = r.ParkingTime;
+            //CheckIn = r.ParkingTime;
             CheckOut = DateTime.Now;
             TotalTime = DateTime.Now - r.ParkingTime;
             Price = 50;

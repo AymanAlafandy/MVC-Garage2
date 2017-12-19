@@ -7,13 +7,13 @@ namespace Garage_WebApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ViclesMigAy : IMigrationMetadata
+    public sealed partial class Memberid : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ViclesMigAy));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Memberid));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712061222557_ViclesMigAy"; }
+            get { return "201712191359570_Memberid"; }
         }
         
         string IMigrationMetadata.Source

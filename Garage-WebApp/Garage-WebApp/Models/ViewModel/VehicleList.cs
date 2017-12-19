@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Garage_WebApp.Models.ViewModel
 {   
    
     public class VehicleList
     {
-        private bool x;
+        //private bool x;
         public int Id { get; set; }
        
         public Type Type { get; set; }
@@ -18,9 +19,9 @@ namespace Garage_WebApp.Models.ViewModel
         public string Color { get; set; }
         [DisplayName("Registration Number")]
         public string RegNr { get; set; }
-       
+        [Column(TypeName = "datetime2")]
         public DateTime ParkingTime { get; set; }
-       
+      
 
         public VehicleList()
         {

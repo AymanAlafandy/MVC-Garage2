@@ -21,12 +21,13 @@ namespace Garage_WebApp.Controllers
         {
             return View(db.Vehicle.ToList());
         }
+
         public ActionResult VehicleList()
         {
-            List<VehicleList> model = new List<Models.ViewModel.VehicleList>();
+            List<ParkedVehicle> model = new List<ParkedVehicle>();
             foreach(var p in db.Vehicle.ToList())
             {
-                model.Add(new VehicleList(p));
+                model.Add(p);
             }
             //var model = db.Vehicle.Where(p => p.Color == "VehicleList").ToList();
             return View(model);
