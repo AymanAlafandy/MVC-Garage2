@@ -21,6 +21,21 @@ namespace Garage_WebApp.Controllers
             return View(db.Members.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string Search, string MemberNr)
+        {
+            if (Search == "MemberNr")////
+            {
+                return View(db.Members.Where(y => y.MemberNr.ToString().Contains(MemberNr)).ToList());
+            }
+            else
+            {
+                return View(db.Members.ToList());
+            }
+
+        }
+
+
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
