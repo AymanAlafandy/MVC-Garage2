@@ -11,7 +11,7 @@ namespace Garage_WebApp.Models
 {
     public class ParkedVehicle
     {
-        public int Id { get; set; }
+        public int Id { get; set; }//
         public int MemberId { get; set; }
         public int VehicleTypeId { get; set; }
 
