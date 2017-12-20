@@ -158,6 +158,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="Controllers\ReceiptsController.cs" />
     <Compile Include="DataAccessLayer\RegisterContext.cs" />
@@ -227,6 +228,13 @@
     <Content Include="Views\ParkedVehicles\VehicleList.cshtml" />
     <Content Include="Views\ParkedVehicles\Receipt.cshtml" />
     <Content Include="Views\Receipts\Details.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\VehicleType.cshtml" />
+    <Content Include="Views\Members\Member.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
