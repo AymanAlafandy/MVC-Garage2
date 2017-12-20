@@ -21,4 +21,5 @@ namespace Garage_WebApp.Models.ViewModel
     //    Motorcycle,
     //    Boat,
     //}
+    
 }

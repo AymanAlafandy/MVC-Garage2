@@ -25,7 +25,7 @@ namespace Garage_WebApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        MemberId = c.Int(),
+                        MemberId = c.Int(nullable: false),
                         VehicleTypeId = c.Int(nullable: false),
                         RegNr = c.String(nullable: false),
                         Color = c.String(nullable: false),
@@ -36,7 +36,7 @@ namespace Garage_WebApp.Migrations
                         CheckOutTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Members", t => t.MemberId)
+                .ForeignKey("dbo.Members", t => t.MemberId, cascadeDelete: true)
                 .ForeignKey("dbo.VehicleTypes", t => t.VehicleTypeId, cascadeDelete: true)
                 .Index(t => t.MemberId)
                 .Index(t => t.VehicleTypeId);

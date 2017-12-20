@@ -7,140 +7,128 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Garage_WebApp.DataAccessLayer;
-using Garage_WebApp.Models;
 using Garage_WebApp.Models.ViewModel;
 
 namespace Garage_WebApp.Controllers
 {
-    public class ParkedVehiclesController : Controller
+    public class MembersController : Controller
     {
-        public RegisterContext db = new RegisterContext();
+        private RegisterContext db = new RegisterContext();
 
-        // GET: ParkedVehicles
+        // GET: Members
         public ActionResult Index()
         {
-            return View(db.Vehicle.ToList());
-        }
-        //
-        public ActionResult VehicleList()
-        {
-            List<ParkedVehicle> model = new List<ParkedVehicle>();
-            foreach (var p in db.Vehicle.ToList())
-            {
-                model.Add(p);
-            }
-            return View(model);
+            return View(db.Members.ToList());
         }
 
 
+
+        // Post: Members
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(/**/string searchBy, string search)
+        public ActionResult Index(string Search , string MemberNr)
         {
-            if (searchBy== "RegistrationNumber") //search
+            if (Search == "MemberNr")////
             {
-                return View(db.Vehicle.Where(x => x.RegNr.ToString().Contains(search)).ToList());
+                return View(db.Members.Where(y => y.MemberNr.ToString().Contains(MemberNr)).ToList());
             }
             else
             {
-                return View(db.Vehicle.ToList());
+                return View(db.Members.ToList());
             }
+            
         }
 
-
-        // GET: ParkedVehicles/Details/5
+        // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ParkedVehicle parkedVehicle = db.Vehicle.Find(id);
-            if (parkedVehicle == null)
+            Member member = db.Members.Find(id);
+            if (member == null)
             {
                 return HttpNotFound();
             }
-            return View(parkedVehicle);
+            return View(member);
         }
 
-        // GET: ParkedVehicles/Create
+        // GET: Members/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ParkedVehicles/Create
+        // POST: Members/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels,ParkingTime")] ParkedVehicle parkedVehicle)
+        public ActionResult Create([Bind(Include = "Id,Name,MemberNr,Adress,Phone,DateOfBirth")] Member member)
         {
             if (ModelState.IsValid)
             {
-                db.Vehicle.Add(parkedVehicle);
-                parkedVehicle.ParkingTime = DateTime.Now;
+                db.Members.Add(member);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(parkedVehicle);
+            return View(member);
         }
 
-        // GET: ParkedVehicles/Edit/5
+        // GET: Members/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ParkedVehicle parkedVehicle = db.Vehicle.Find(id);
-            if (parkedVehicle == null)
+            Member member = db.Members.Find(id);
+            if (member == null)
             {
                 return HttpNotFound();
             }
-            return View(parkedVehicle);
+            return View(member);
         }
 
-        // POST: ParkedVehicles/Edit/5
+        // POST: Members/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Type,RegistrationNumber,Color,Brand,Model,NumberOfWheels")] ParkedVehicle parkedVehicle)
+        public ActionResult Edit([Bind(Include = "Id,Name,MemberNr,Adress,Phone,DateOfBirth")] Member member)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(parkedVehicle);
+                db.Entry(member).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(parkedVehicle);
+            return View(member);
         }
 
-        // GET: ParkedVehicles/Delete/5
+        // GET: Members/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ParkedVehicle parkedVehicle = db.Vehicle.Find(id);
-            if (parkedVehicle == null)
+            Member member = db.Members.Find(id);
+            if (member == null)
             {
                 return HttpNotFound();
             }
-            return View(parkedVehicle);
+            return View(member);
         }
 
-
-        // POST: ParkedVehicles/Delete/5
+        // POST: Members/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ParkedVehicle parkedVehicle = db.Vehicle.Find(id);
-            db.Vehicle.Remove(parkedVehicle);
+            Member member = db.Members.Find(id);
+            db.Members.Remove(member);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
