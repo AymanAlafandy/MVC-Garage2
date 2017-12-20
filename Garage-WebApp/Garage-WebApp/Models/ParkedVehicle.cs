@@ -16,7 +16,7 @@ namespace Garage_WebApp.Models
         public int VehicleTypeId { get; set; }
 
         [DisplayName("Registration Number")]
-        [Required(ErrorMessage = "Registration Number is required")]
+        [Required(ErrorMessage = "Registration Number is required")] 
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special characters not allowed")]
         public string RegNr { get; set; }
 
