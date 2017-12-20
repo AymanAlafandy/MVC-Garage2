@@ -13,7 +13,7 @@ namespace Garage_WebApp.Models
     {
         public int Id { get; set; }//
         public int MemberId { get; set; }
-        public int VehicleTypeId { get; set; }
+        public int VehicleTypeId { get; set; } 
 
         [DisplayName("Registration Number")]
         [Required(ErrorMessage = "Registration Number is required")] 
