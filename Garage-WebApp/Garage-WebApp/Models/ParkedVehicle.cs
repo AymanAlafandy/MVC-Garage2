@@ -28,7 +28,7 @@ namespace Garage_WebApp.Models
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special characters not allowed")]
         public string Brand { get; set; }
 
-        [Required(ErrorMessage = "Model is required")]
+        [Required(ErrorMessage = "Type is required")]
         [RegularExpression(@"^[a-zA-Z0-9'' ']+$", ErrorMessage = "Special characters not allowed")]
         public string Type { get; set; }
 

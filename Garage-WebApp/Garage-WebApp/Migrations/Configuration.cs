@@ -23,6 +23,7 @@ namespace Garage_WebApp.Migrations
             context.VehicleTypes.AddOrUpdate(t => t.Type,
                 new VehicleType() { Type = "Car" },
                 new VehicleType() { Type = "Buss" }
+              
                 );
 
             context.Members.AddOrUpdate(m => m.Phone,
@@ -32,9 +33,8 @@ namespace Garage_WebApp.Migrations
                     Adress = "xxx",
                     DateOfBirth = DateTime.Now,
                     MemberNr = 123,
-                    Phone = "123456789"
-                }
-                );
+             
+                 } );
 
             context.SaveChanges();
 
@@ -45,85 +45,84 @@ namespace Garage_WebApp.Migrations
                 RegNr = "123",
                 Color = "Red",
                 Brand = "TOYOTA",
-                Type = "Avi",
+                Type = "Car",
                 NumberOfWheels = 4,
                 ParkingTime = DateTime.Now,
                 //ChekInTime = DateTime.Now,
                 CheckOutTime = DateTime.Now,
                 MemberId = context.Members.FirstOrDefault(m => m.Name == "Kalle").Id,
                 VehicleTypeId = context.VehicleTypes.FirstOrDefault(t => t.Type == "Car").Id
-                
 
-                //},
-                // new ParkedVehicle()
-                // {
+                 //},
+                 // new ParkedVehicle()
+                 // {
 
-                //     RegNr = "445",
-                //     Color = "Pink",
-                //     Brand = "Vila",
-                //     Type = "Energy",
-                //     NumberOfWheels = 0,
-                //     ParkingTime = DateTime.Now,
-                //     //ChekInTime = DateTime.Now,
-                //     CheckOutTime = DateTime.Now,
-                //     MemberId = 9632,
+                 //     RegNr = "445",
+                 //     Color = "Pink",
+                 //     Brand = "Vila",
+                 //     Type = "Energy",
+                 //     NumberOfWheels = 0,
+                 //     ParkingTime = DateTime.Now,
+                 //     //ChekInTime = DateTime.Now,
+                 //     CheckOutTime = DateTime.Now,
+                 //     MemberId = 9632,
 
-                // },
+                 // },
 
-                //  new ParkedVehicle()
-                //  {
+                 //  new ParkedVehicle()
+                 //  {
 
-                //      RegNr = "0010",
-                //      Color = "Blue",
-                //      Brand = "ThaiAirWay",
-                //      Type = "Boing77",
-                //      NumberOfWheels = 3,
-                //      ParkingTime = DateTime.Now,
-                //      //ChekInTime = DateTime.Now,
-                //      CheckOutTime = DateTime.Now,
-                //      MemberId = 7896,
-                //  },
-                //  new ParkedVehicle()
-                //  {
+                 //      RegNr = "0010",
+                 //      Color = "Blue",
+                 //      Brand = "ThaiAirWay",
+                 //      Type = "Boing77",
+                 //      NumberOfWheels = 3,
+                 //      ParkingTime = DateTime.Now,
+                 //      //ChekInTime = DateTime.Now,
+                 //      CheckOutTime = DateTime.Now,
+                 //      MemberId = 7896,
+                 //  },
+                 //  new ParkedVehicle()
+                 //  {
 
-                //      RegNr = "2525",
-                //      Color = "Black",
-                //      Brand = "YAMAHA",
-                //      Type = "LordCoper",
-                //      NumberOfWheels = 3,
-                //      ParkingTime = DateTime.Now,
-                //      //ChekInTime = DateTime.Now,
-                //      CheckOutTime = DateTime.Now,
-                //      MemberId = 7893,
-                //  },
-                //  new ParkedVehicle()
-                //  {
+                 //      RegNr = "2525",
+                 //      Color = "Black",
+                 //      Brand = "YAMAHA",
+                 //      Type = "LordCoper",
+                 //      NumberOfWheels = 3,
+                 //      ParkingTime = DateTime.Now,
+                 //      //ChekInTime = DateTime.Now,
+                 //      CheckOutTime = DateTime.Now,
+                 //      MemberId = 7893,
+                 //  },
+                 //  new ParkedVehicle()
+                 //  {
 
-                //      RegNr = "0005",
-                //      Color = "Green",
-                //      Brand = "VOLVO",
-                //      Type = "BUSSPower",
-                //      NumberOfWheels = 6,
-                //      ParkingTime = DateTime.Now,
-                //      //ChekInTime = DateTime.Now,
-                //      CheckOutTime = DateTime.Now,
-                //      MemberId = 7896,
+                 //      RegNr = "0005",
+                 //      Color = "Green",
+                 //      Brand = "VOLVO",
+                 //      Type = "BUSSPower",
+                 //      NumberOfWheels = 6,
+                 //      ParkingTime = DateTime.Now,
+                 //      //ChekInTime = DateTime.Now,
+                 //      CheckOutTime = DateTime.Now,
+                 //      MemberId = 7896,
 
-                //  },
-                //  new ParkedVehicle()
-                //  {
+                 //  },
+                 //  new ParkedVehicle()
+                 //  {
 
-                //      RegNr = "69",
-                //      Color = "bronze",
-                //      Brand = "VOLVO",
-                //      Type = "Family Car",
-                //      NumberOfWheels = 4,
-                //      ParkingTime = DateTime.Now,
-                //      //ChekInTime = DateTime.Now,
-                //      CheckOutTime = DateTime.Now,
-                //      MemberId = 5623,
-                //  });
-            });
+                 //      RegNr = "69",
+                 //      Color = "bronze",
+                 //      Brand = "VOLVO",
+                 //      Type = "Family Car",
+                 //      NumberOfWheels = 4,
+                 //      ParkingTime = DateTime.Now,
+                 //      //ChekInTime = DateTime.Now,
+                 //      CheckOutTime = DateTime.Now,
+                 //      MemberId = 5623,
+                 //  });
+             });
         }
     }
 }

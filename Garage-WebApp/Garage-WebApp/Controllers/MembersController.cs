@@ -17,7 +17,8 @@ namespace Garage_WebApp.Controllers
 
         // GET: Members
         public ActionResult Index()
-        {
+        { 
+            //List<SelectListItem> ObjItem
             return View(db.Members.ToList());
         }
 

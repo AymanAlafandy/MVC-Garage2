@@ -22,7 +22,7 @@ namespace Garage_WebApp.Models.ViewModel
         public Receipt(ParkedVehicle r)
         {
             Id = r.Id;
-            Type = r.Type.ToString();
+            Type = r.VehicleTypes.Type;
             RegNr = r.RegNr;
             //CheckIn = r.ParkingTime;
             CheckOut = DateTime.Now;

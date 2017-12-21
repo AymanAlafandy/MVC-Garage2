@@ -1,7 +1,7 @@
 ﻿@model Garage_WebApp.Models.ParkedVehicle
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "VehicleId";
 }
 
 <h2>Please enter your vehicle information</h2>
@@ -12,18 +12,41 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Regist Vehicle</h4>
+        <h4>Register Vehicle</h4>
         <hr />
-       
+
+        @*<form action="" method="get">
+
+            <fieldset>
+               Vehicle Type<select id="VehicleTypes" name="VehicleTypes">
+
+                    <option value=""></option>
+
+                    <option value="0">Car</option>
+
+                    <option value="1">Bus</option>
+
+                    <option selected="selected" value="2">Motocycle</option>
+
+                    <option value="3">Airpplane</option>
+                    <option value="4">Boat</option>
+
+                </select>
+
+           
+
+            </fieldset>
+
+        </form>*@
 
         
 
        
         <div class="form-group">
-            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.VehicleTypeId, "VehicleTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EnumDropDownListFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                @Html.DropDownList("VehicleTypeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VehicleTypeId, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -21,7 +21,18 @@ namespace Garage_WebApp.Controllers
         {
             return View(db.Vehicle.ToList());
         }
+        //public ActionResult SelectType()
+        //{
+        //    List<SelectListItem> item = new List<SelectListItem>();
+        //    item.Add(new SelectListItem { Text = "Car", Value = "0" });
+        //    item.Add(new SelectListItem { Text = "Bus", Value = "1" });
+        //    item.Add(new SelectListItem { Text = "Motocycle", Value = "2" });
+        //    item.Add(new SelectListItem { Text = "Airplane", Value = "3" });
+        //    item.Add(new SelectListItem { Text = "Boat", Value = "4" });
 
+
+        //    return View(Index);
+        //}
         public ActionResult VehicleList()
         {
             List<ParkedVehicle> model = new List<ParkedVehicle>();
@@ -35,7 +46,8 @@ namespace Garage_WebApp.Controllers
 
         public ActionResult VehicleType()
         {
-            return View();
+            var model = db.VehicleTypes.ToList();
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,6 +82,9 @@ namespace Garage_WebApp.Controllers
         // GET: ParkedVehicles/Create
         public ActionResult Create()
         {
+
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "Type");
+
             return View();
         }
 
@@ -80,15 +95,17 @@ namespace Garage_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Type,RegNr,Color,Brand,Model,NumberOfWheels,ParkingTime")] ParkedVehicle parkedVehicle)
         {
+          
             if (ModelState.IsValid)
             {
-                db.Vehicle.Add(parkedVehicle);
+               var model = db.Vehicle.Add(parkedVehicle);
                 parkedVehicle.ParkingTime = DateTime.Now;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return View(model);
             }
+            //ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "Type");
 
-            return View(parkedVehicle);
+            return View(db.Vehicle.ToList());
         }
 
         // GET: ParkedVehicles/Edit/5
@@ -103,6 +120,8 @@ namespace Garage_WebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "Id", "Type");
+            db.SaveChanges();
             return View(parkedVehicle);
         }
 
@@ -119,6 +138,7 @@ namespace Garage_WebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(parkedVehicle);
         }
 
